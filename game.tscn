@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddtkw5k61wktc"]
+
+[ext_resource type="Script" path="res://slot.gd" id="1_3or0u"]
+[ext_resource type="Texture2D" uid="uid://dgarewqrppk4g" path="res://icon.svg" id="1_ouvq7"]
+
+[node name="game" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(250, 50)
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+custom_minimum_size = Vector2(250, 25)
+offset_top = 2.0
+offset_right = 250.0
+offset_bottom = 106.0
+columns = 5
+
+[node name="slot" type="PanelContainer" parent="Control/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/slot"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot2" type="PanelContainer" parent="Control/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/slot2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot3" type="PanelContainer" parent="Control/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/slot3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot4" type="PanelContainer" parent="Control/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/slot4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="slot" type="PanelContainer" parent="."]
+offset_left = 96.0
+offset_top = 91.0
+offset_right = 146.0
+offset_bottom = 141.0
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="slot"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_ouvq7")
+expand_mode = 1
