@@ -1,77 +1,113 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddtkw5k61wktc"]
+[gd_scene load_steps=7 format=3 uid="uid://ddtkw5k61wktc"]
 
 [ext_resource type="Script" path="res://slot.gd" id="1_3or0u"]
+[ext_resource type="Script" path="res://row.gd" id="1_bi8s5"]
 [ext_resource type="Texture2D" uid="uid://dgarewqrppk4g" path="res://icon.svg" id="1_ouvq7"]
+[ext_resource type="Script" path="res://checkbutton.gd" id="3_b2v4e"]
+[ext_resource type="Script" path="res://spawner.gd" id="3_kqg7q"]
+[ext_resource type="Script" path="res://board.gd" id="5_beeqs"]
 
 [node name="game" type="Node2D"]
+position = Vector2(286, 137)
 
-[node name="Control" type="Control" parent="."]
-custom_minimum_size = Vector2(250, 50)
-layout_direction = 2
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="GridContainer" type="GridContainer" parent="Control"]
-custom_minimum_size = Vector2(250, 25)
-offset_top = 2.0
-offset_right = 250.0
-offset_bottom = 106.0
-columns = 5
-
-[node name="slot" type="PanelContainer" parent="Control/GridContainer"]
-layout_mode = 2
-script = ExtResource("1_3or0u")
-
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/slot"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-expand_mode = 1
-
-[node name="slot2" type="PanelContainer" parent="Control/GridContainer"]
-layout_mode = 2
-script = ExtResource("1_3or0u")
-
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/slot2"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-expand_mode = 1
-
-[node name="slot3" type="PanelContainer" parent="Control/GridContainer"]
-layout_mode = 2
-script = ExtResource("1_3or0u")
-
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/slot3"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-expand_mode = 1
-
-[node name="slot4" type="PanelContainer" parent="Control/GridContainer"]
-layout_mode = 2
-script = ExtResource("1_3or0u")
-
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/slot4"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-expand_mode = 1
-
-[node name="PanelContainer" type="PanelContainer" parent="Control/GridContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control/GridContainer/PanelContainer"]
-layout_mode = 2
-
-[node name="slot" type="PanelContainer" parent="."]
+[node name="testing" type="PanelContainer" parent="."]
 offset_left = 96.0
 offset_top = 91.0
 offset_right = 146.0
 offset_bottom = 141.0
 script = ExtResource("1_3or0u")
 
-[node name="TextureRect" type="TextureRect" parent="slot"]
+[node name="TextureRect" type="TextureRect" parent="testing"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 texture = ExtResource("1_ouvq7")
 expand_mode = 1
+
+[node name="spawner" type="PanelContainer" parent="."]
+offset_left = 415.0
+offset_top = 38.0
+offset_right = 465.0
+offset_bottom = 88.0
+script = ExtResource("3_kqg7q")
+
+[node name="TextureRect" type="TextureRect" parent="spawner"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("1_ouvq7")
+expand_mode = 1
+
+[node name="board" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_beeqs")
+
+[node name="row" type="Control" parent="board"]
+custom_minimum_size = Vector2(250, 50)
+layout_direction = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 267.0
+offset_bottom = 50.0
+script = ExtResource("1_bi8s5")
+
+[node name="GridContainer" type="GridContainer" parent="board/row"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 0
+offset_top = 2.0
+offset_right = 250.0
+offset_bottom = 106.0
+columns = 5
+
+[node name="slot1" type="PanelContainer" parent="board/row/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="board/row/GridContainer/slot1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot2" type="PanelContainer" parent="board/row/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="board/row/GridContainer/slot2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot3" type="PanelContainer" parent="board/row/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="board/row/GridContainer/slot3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot4" type="PanelContainer" parent="board/row/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="board/row/GridContainer/slot4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="check" type="PanelContainer" parent="board/row/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="checkbutton" type="Button" parent="board/row/GridContainer/check"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+action_mode = 0
+text = "Check?"
+script = ExtResource("3_b2v4e")
+
+[node name="tokens" type="Control" parent="board"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
