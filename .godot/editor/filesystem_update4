@@ -1,2 +1,4 @@
 res://game.tscn
-res://row.gd
+res://checkbutton.gd
+res://board.gd
+res://game.gd
