@@ -5,17 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://dgarewqrppk4g" path="res://icon.svg" id="1_ouvq7"]
 [ext_resource type="Script" path="res://checkbutton.gd" id="3_b2v4e"]
 [ext_resource type="Script" path="res://spawner.gd" id="3_kqg7q"]
-[ext_resource type="Texture2D" uid="uid://c6lahffxifecg" path="res://textures/blue.png" id="4_umh05"]
 [ext_resource type="Script" path="res://board.gd" id="5_beeqs"]
+[ext_resource type="Texture2D" uid="uid://cjoaowfp40b0b" path="res://textures/red.png" id="7_lnu76"]
 
 [node name="game" type="Node2D"]
 position = Vector2(286, 137)
 
 [node name="testing" type="PanelContainer" parent="."]
-offset_left = 96.0
-offset_top = 91.0
-offset_right = 146.0
-offset_bottom = 141.0
+custom_minimum_size = Vector2(50, 50)
+offset_left = 344.0
+offset_top = 6.0
+offset_right = 396.0
+offset_bottom = 57.0
 script = ExtResource("1_3or0u")
 
 [node name="TextureRect" type="TextureRect" parent="testing"]
@@ -24,41 +25,25 @@ layout_mode = 2
 texture = ExtResource("1_ouvq7")
 expand_mode = 1
 
-[node name="SpawnerBlue" type="PanelContainer" parent="."]
-offset_left = 415.0
-offset_top = 38.0
-offset_right = 465.0
-offset_bottom = 88.0
-script = ExtResource("3_kqg7q")
-
-[node name="TextureRect" type="TextureRect" parent="SpawnerBlue"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-texture = ExtResource("4_umh05")
-expand_mode = 1
-
-[node name="board" type="Control" parent="."]
+[node name="BoardContainer" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_beeqs")
 
-[node name="row" type="Control" parent="board"]
+[node name="layout" type="GridContainer" parent="BoardContainer"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Row1" type="Control" parent="BoardContainer/layout"]
 custom_minimum_size = Vector2(250, 50)
 layout_direction = 2
-layout_mode = 1
-anchor_left = -7.163
-anchor_top = -3.413
-anchor_right = -7.163
-anchor_bottom = -3.413
-offset_left = 253.52
-offset_top = 136.52
-offset_right = 553.52
-offset_bottom = 186.52
+layout_mode = 2
 script = ExtResource("1_bi8s5")
 
-[node name="GridContainer" type="GridContainer" parent="board/row"]
+[node name="GridContainer" type="GridContainer" parent="BoardContainer/layout/Row1"]
 custom_minimum_size = Vector2(250, 25)
 layout_mode = 0
 offset_top = 2.0
@@ -66,54 +51,393 @@ offset_right = 250.0
 offset_bottom = 106.0
 columns = 5
 
-[node name="slot1" type="PanelContainer" parent="board/row/GridContainer"]
+[node name="slot1" type="PanelContainer" parent="BoardContainer/layout/Row1/GridContainer"]
 layout_mode = 2
 script = ExtResource("1_3or0u")
 
-[node name="TextureRect" type="TextureRect" parent="board/row/GridContainer/slot1"]
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row1/GridContainer/slot1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 expand_mode = 1
 
-[node name="slot2" type="PanelContainer" parent="board/row/GridContainer"]
+[node name="slot2" type="PanelContainer" parent="BoardContainer/layout/Row1/GridContainer"]
 layout_mode = 2
 script = ExtResource("1_3or0u")
 
-[node name="TextureRect" type="TextureRect" parent="board/row/GridContainer/slot2"]
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row1/GridContainer/slot2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 expand_mode = 1
 
-[node name="slot3" type="PanelContainer" parent="board/row/GridContainer"]
+[node name="slot3" type="PanelContainer" parent="BoardContainer/layout/Row1/GridContainer"]
 layout_mode = 2
 script = ExtResource("1_3or0u")
 
-[node name="TextureRect" type="TextureRect" parent="board/row/GridContainer/slot3"]
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row1/GridContainer/slot3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 expand_mode = 1
 
-[node name="slot4" type="PanelContainer" parent="board/row/GridContainer"]
+[node name="slot4" type="PanelContainer" parent="BoardContainer/layout/Row1/GridContainer"]
 layout_mode = 2
 script = ExtResource("1_3or0u")
 
-[node name="TextureRect" type="TextureRect" parent="board/row/GridContainer/slot4"]
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row1/GridContainer/slot4"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 expand_mode = 1
 
-[node name="check" type="PanelContainer" parent="board/row/GridContainer"]
+[node name="check" type="PanelContainer" parent="BoardContainer/layout/Row1/GridContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 
-[node name="checkbutton" type="Button" parent="board/row/GridContainer/check"]
+[node name="checkbutton" type="Button" parent="BoardContainer/layout/Row1/GridContainer/check"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 action_mode = 0
 text = "Check?"
 script = ExtResource("3_b2v4e")
 
-[node name="tokens" type="Control" parent="board"]
+[node name="Row2" type="Control" parent="BoardContainer/layout"]
+custom_minimum_size = Vector2(250, 50)
+layout_direction = 2
+layout_mode = 2
+script = ExtResource("1_bi8s5")
+
+[node name="GridContainer" type="GridContainer" parent="BoardContainer/layout/Row2"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 0
+offset_top = 2.0
+offset_right = 250.0
+offset_bottom = 106.0
+columns = 5
+
+[node name="slot1" type="PanelContainer" parent="BoardContainer/layout/Row2/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row2/GridContainer/slot1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot2" type="PanelContainer" parent="BoardContainer/layout/Row2/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row2/GridContainer/slot2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot3" type="PanelContainer" parent="BoardContainer/layout/Row2/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row2/GridContainer/slot3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot4" type="PanelContainer" parent="BoardContainer/layout/Row2/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row2/GridContainer/slot4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="check" type="PanelContainer" parent="BoardContainer/layout/Row2/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="checkbutton" type="Button" parent="BoardContainer/layout/Row2/GridContainer/check"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+action_mode = 0
+text = "Check?"
+script = ExtResource("3_b2v4e")
+
+[node name="Row3" type="Control" parent="BoardContainer/layout"]
+custom_minimum_size = Vector2(250, 50)
+layout_direction = 2
+layout_mode = 2
+script = ExtResource("1_bi8s5")
+
+[node name="GridContainer" type="GridContainer" parent="BoardContainer/layout/Row3"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 0
+offset_top = 2.0
+offset_right = 250.0
+offset_bottom = 106.0
+columns = 5
+
+[node name="slot1" type="PanelContainer" parent="BoardContainer/layout/Row3/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row3/GridContainer/slot1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot2" type="PanelContainer" parent="BoardContainer/layout/Row3/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row3/GridContainer/slot2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot3" type="PanelContainer" parent="BoardContainer/layout/Row3/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row3/GridContainer/slot3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot4" type="PanelContainer" parent="BoardContainer/layout/Row3/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row3/GridContainer/slot4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="check" type="PanelContainer" parent="BoardContainer/layout/Row3/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="checkbutton" type="Button" parent="BoardContainer/layout/Row3/GridContainer/check"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+action_mode = 0
+text = "Check?"
+script = ExtResource("3_b2v4e")
+
+[node name="Row4" type="Control" parent="BoardContainer/layout"]
+custom_minimum_size = Vector2(250, 50)
+layout_direction = 2
+layout_mode = 2
+script = ExtResource("1_bi8s5")
+
+[node name="GridContainer" type="GridContainer" parent="BoardContainer/layout/Row4"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 0
+offset_top = 2.0
+offset_right = 250.0
+offset_bottom = 106.0
+columns = 5
+
+[node name="slot1" type="PanelContainer" parent="BoardContainer/layout/Row4/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row4/GridContainer/slot1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot2" type="PanelContainer" parent="BoardContainer/layout/Row4/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row4/GridContainer/slot2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot3" type="PanelContainer" parent="BoardContainer/layout/Row4/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row4/GridContainer/slot3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot4" type="PanelContainer" parent="BoardContainer/layout/Row4/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row4/GridContainer/slot4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="check" type="PanelContainer" parent="BoardContainer/layout/Row4/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="checkbutton" type="Button" parent="BoardContainer/layout/Row4/GridContainer/check"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+action_mode = 0
+text = "Check?"
+script = ExtResource("3_b2v4e")
+
+[node name="Row5" type="Control" parent="BoardContainer/layout"]
+custom_minimum_size = Vector2(250, 50)
+layout_direction = 2
+layout_mode = 2
+script = ExtResource("1_bi8s5")
+
+[node name="GridContainer" type="GridContainer" parent="BoardContainer/layout/Row5"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 0
+offset_top = 2.0
+offset_right = 250.0
+offset_bottom = 106.0
+columns = 5
+
+[node name="slot1" type="PanelContainer" parent="BoardContainer/layout/Row5/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row5/GridContainer/slot1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot2" type="PanelContainer" parent="BoardContainer/layout/Row5/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row5/GridContainer/slot2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot3" type="PanelContainer" parent="BoardContainer/layout/Row5/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row5/GridContainer/slot3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot4" type="PanelContainer" parent="BoardContainer/layout/Row5/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row5/GridContainer/slot4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="check" type="PanelContainer" parent="BoardContainer/layout/Row5/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="checkbutton" type="Button" parent="BoardContainer/layout/Row5/GridContainer/check"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+action_mode = 0
+text = "Check?"
+script = ExtResource("3_b2v4e")
+
+[node name="Row6" type="Control" parent="BoardContainer/layout"]
+custom_minimum_size = Vector2(250, 50)
+layout_direction = 2
+layout_mode = 2
+script = ExtResource("1_bi8s5")
+
+[node name="GridContainer" type="GridContainer" parent="BoardContainer/layout/Row6"]
+custom_minimum_size = Vector2(250, 25)
+layout_mode = 0
+offset_top = 2.0
+offset_right = 250.0
+offset_bottom = 106.0
+columns = 5
+
+[node name="slot1" type="PanelContainer" parent="BoardContainer/layout/Row6/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row6/GridContainer/slot1"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot2" type="PanelContainer" parent="BoardContainer/layout/Row6/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row6/GridContainer/slot2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot3" type="PanelContainer" parent="BoardContainer/layout/Row6/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row6/GridContainer/slot3"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="slot4" type="PanelContainer" parent="BoardContainer/layout/Row6/GridContainer"]
+layout_mode = 2
+script = ExtResource("1_3or0u")
+
+[node name="TextureRect" type="TextureRect" parent="BoardContainer/layout/Row6/GridContainer/slot4"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+expand_mode = 1
+
+[node name="check" type="PanelContainer" parent="BoardContainer/layout/Row6/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="checkbutton" type="Button" parent="BoardContainer/layout/Row6/GridContainer/check"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+action_mode = 0
+text = "Check?"
+script = ExtResource("3_b2v4e")
+
+[node name="SpawnerContainer" type="Control" parent="."]
+custom_minimum_size = Vector2(50, 300)
+layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 446.0
+offset_top = 88.0
+offset_right = 496.0
+offset_bottom = 388.0
+
+[node name="GridContainer" type="GridContainer" parent="SpawnerContainer"]
+custom_minimum_size = Vector2(50, 300)
+layout_mode = 0
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 49.0
+offset_bottom = 47.0
+
+[node name="SpawnerTest" type="PanelContainer" parent="SpawnerContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("3_kqg7q")
+
+[node name="TextureRect" type="TextureRect" parent="SpawnerContainer/GridContainer/SpawnerTest"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("7_lnu76")
+expand_mode = 1
+
+[node name="SpawnerTest2" type="PanelContainer" parent="SpawnerContainer/GridContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+script = ExtResource("3_kqg7q")
+
+[node name="TextureRect" type="TextureRect" parent="SpawnerContainer/GridContainer/SpawnerTest2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("7_lnu76")
+expand_mode = 1

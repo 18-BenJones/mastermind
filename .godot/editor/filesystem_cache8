@@ -1,12 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1705875876
+::res://::1705876843
 board.gd::GDScript::-1::1705864726::0::1::::<>Control<>::
 checkbutton.gd::GDScript::-1::1705864726::0::1::::<>Button<>::
-game.tscn::PackedScene::7409699809306776672::1705875516::0::1::::<><>::res://slot.gd<>res://row.gd<>uid://dgarewqrppk4g::::res://icon.svg<>res://checkbutton.gd<>res://spawner.gd<>uid://c6lahffxifecg::::res://textures/blue.png<>res://board.gd
+game.tscn::PackedScene::7409699809306776672::1705876843::0::1::::<><>::res://slot.gd<>res://row.gd<>uid://dgarewqrppk4g::::res://icon.svg<>res://checkbutton.gd<>res://spawner.gd<>res://board.gd<>uid://cjoaowfp40b0b::::res://textures/red.png
 icon.svg::CompressedTexture2D::7581435625983770128::1705864726::1705864760::1::::<><>::
 README.md::TextFile::-1::1705875648::0::1::::<><>::
 row.gd::GDScript::-1::1705865233::0::1::::<>Control<>::
 slot.gd::GDScript::-1::1705864726::0::1::::<>PanelContainer<>::
 spawner.gd::GDScript::-1::1705865233::0::1::::<>PanelContainer<>::
-::res://textures/::1705865140
-blue.png::CompressedTexture2D::6971416447413877282::1705865067::1705865140::1::::<><>::
+::res://textures/::1705876882
+red.png::CompressedTexture2D::5433468413758993935::1705876873::1705876886::1::::<><>::
