@@ -1,4 +1,3 @@
 res://game.tscn
-res://checkbutton.gd
-res://board.gd
-res://game.gd
+res://row.gd
+res://spawner.gd

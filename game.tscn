@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddtkw5k61wktc"]
+[gd_scene load_steps=8 format=3 uid="uid://ddtkw5k61wktc"]
 
 [ext_resource type="Script" path="res://slot.gd" id="1_3or0u"]
 [ext_resource type="Script" path="res://row.gd" id="1_bi8s5"]
 [ext_resource type="Texture2D" uid="uid://dgarewqrppk4g" path="res://icon.svg" id="1_ouvq7"]
 [ext_resource type="Script" path="res://checkbutton.gd" id="3_b2v4e"]
 [ext_resource type="Script" path="res://spawner.gd" id="3_kqg7q"]
+[ext_resource type="Texture2D" uid="uid://c6lahffxifecg" path="res://textures/blue.png" id="4_umh05"]
 [ext_resource type="Script" path="res://board.gd" id="5_beeqs"]
 
 [node name="game" type="Node2D"]
@@ -23,17 +24,17 @@ layout_mode = 2
 texture = ExtResource("1_ouvq7")
 expand_mode = 1
 
-[node name="spawner" type="PanelContainer" parent="."]
+[node name="SpawnerBlue" type="PanelContainer" parent="."]
 offset_left = 415.0
 offset_top = 38.0
 offset_right = 465.0
 offset_bottom = 88.0
 script = ExtResource("3_kqg7q")
 
-[node name="TextureRect" type="TextureRect" parent="spawner"]
+[node name="TextureRect" type="TextureRect" parent="SpawnerBlue"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-texture = ExtResource("1_ouvq7")
+texture = ExtResource("4_umh05")
 expand_mode = 1
 
 [node name="board" type="Control" parent="."]

@@ -6,7 +6,7 @@ func _get_drag_data(_at_position):
 	
 	set_drag_preview(get_preivew())
 	
-	return texture_rect 
+	return texture_rect
 	
 func _can_drop_data(_pos, data):
 	return data is TextureRect
