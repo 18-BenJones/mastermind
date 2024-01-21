@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://slot.gd" id="1_3or0u"]
 [ext_resource type="Script" path="res://row.gd" id="1_bi8s5"]
 [ext_resource type="Texture2D" uid="uid://dgarewqrppk4g" path="res://icon.svg" id="1_ouvq7"]
+[ext_resource type="Script" path="res://BoardContainer.gd" id="3_2duif"]
 [ext_resource type="Script" path="res://checkbutton.gd" id="3_b2v4e"]
 [ext_resource type="Script" path="res://spawner.gd" id="3_kqg7q"]
-[ext_resource type="Script" path="res://board.gd" id="5_beeqs"]
 [ext_resource type="Texture2D" uid="uid://cjoaowfp40b0b" path="res://textures/red.png" id="7_lnu76"]
 
 [node name="game" type="Node2D"]
@@ -30,7 +30,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("5_beeqs")
+script = ExtResource("3_2duif")
 
 [node name="layout" type="GridContainer" parent="BoardContainer"]
 layout_mode = 0

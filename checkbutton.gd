@@ -1,10 +1,10 @@
 extends Button
 
 
-func on_check():
-	# tell row to check the values
-	# hide button
-	
+func on_check(): 
+	# Return the rows values to the BoardContainer 
+	# Hide the button
+	# and display the answers 
 	pass
 
 # Called when the node enters the scene tree for the first time.

@@ -1,5 +1,6 @@
 extends Control
 
+var slots = ["", "", "", ""]
 
 func row_lock():
 	#a function to stop the editing of a row after it has been played

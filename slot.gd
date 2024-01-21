@@ -2,6 +2,9 @@ extends PanelContainer
 
 @onready var texture_rect = $TextureRect
 
+# func send_colour():
+	
+
 func _get_drag_data(_at_position):
 	
 	set_drag_preview(get_preivew())

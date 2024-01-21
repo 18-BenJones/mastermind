@@ -1,1 +1,5 @@
 res://game.tscn
+res://slot.gd
+res://BoardContainer.gd
+res://row.gd
+res://checkbutton.gd
