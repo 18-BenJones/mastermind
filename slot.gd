@@ -1,14 +1,15 @@
 extends PanelContainer
 
 @onready var texture_rect = $TextureRect
+var occupied = false # store if the slot is occupied
+var colour = ""		 # store the current colour, if there is any
 
-# func send_colour():
-	
+func send_colour():
+		# on the checkbutton signal send the current colour to the board for proccessing
+	pass	
 
 func _get_drag_data(_at_position):
-	
 	set_drag_preview(get_preivew())
-	
 	return texture_rect 
 	
 func _can_drop_data(_pos, data):
